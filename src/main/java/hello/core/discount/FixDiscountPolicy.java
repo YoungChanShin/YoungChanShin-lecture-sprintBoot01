@@ -2,6 +2,7 @@ package hello.core.discount;
 
 import hello.core.member.Grade;
 import hello.core.member.Member;
+// 정액 할인 정책
 
 public class FixDiscountPolicy implements DiscountPolicy{
 
@@ -9,7 +10,7 @@ public class FixDiscountPolicy implements DiscountPolicy{
 
     @Override
     public int discount(Member member, int price) {
-        if (member.getGrade()== Grade.VIP){
+        if (member.getGrade()== Grade.VIP){ // enum 타입은 ==을 쓰는 것이 맞다.
             return discountFixAmount;
         }
         return 0;
