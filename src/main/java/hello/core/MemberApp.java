@@ -8,7 +8,9 @@ import hello.core.member.MemberServiceImpl;
 public class MemberApp {
     public static void main(String[] args) {
         // 순수 자바 코드를 이용한 실행 및 테스트 코드 - Spring이 전혀 사용되지 않음
-        MemberService memberService = new MemberServiceImpl();
+        // MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 
